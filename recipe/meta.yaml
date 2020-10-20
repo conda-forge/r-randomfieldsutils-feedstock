@@ -15,7 +15,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 3
+  number: 4
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -49,7 +49,7 @@ test:
 
 about:
   home: http://ms.math.uni-mannheim.de/de/publications/software
-  license: GPL (>= 3)
+  license: GPL-3.0-or-later
   summary: Various utilities are provided that might be used in spatial statistics and elsewhere.
     It delivers a method for solving linear equations that checks the sparsity of the
     matrix before any algorithm is used. Furthermore, it includes the Struve functions.
