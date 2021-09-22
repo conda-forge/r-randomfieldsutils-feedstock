@@ -1,4 +1,4 @@
-{% set version = "0.5.3" %}
+{% set version = "0.5.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,11 +11,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RandomFieldsUtils_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RandomFieldsUtils/RandomFieldsUtils_{{ version }}.tar.gz
-  sha256: ea823cba2e254a9f534efb4b772c0aeef2039ee9ef99744e077b969a87f8031d
+  sha256: f5d687a0b1ce4b112a72c707204e4e8a87e2b91484832cbd0405ff0ac23266c3
 
 build:
-  merge_build_host: True  # [win]
-  number: 4
+  merge_build_host: true  # [win]
+  number: 0
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -50,11 +50,9 @@ test:
 about:
   home: http://ms.math.uni-mannheim.de/de/publications/software
   license: GPL-3.0-or-later
-  summary: Various utilities are provided that might be used in spatial statistics and elsewhere.
-    It delivers a method for solving linear equations that checks the sparsity of the
-    matrix before any algorithm is used. Furthermore, it includes the Struve functions.
+  summary: Various utilities are provided that might be used in spatial statistics and elsewhere. It delivers a method for solving linear equations that checks the sparsity of the matrix before any algorithm is used. Furthermore, it includes the Struve functions.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
