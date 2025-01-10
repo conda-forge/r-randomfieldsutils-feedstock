@@ -13,7 +13,7 @@ source:
   sha256: 8cc288ba0f234eedb20ac791c89e18bde15e1f690ce34a303ff91a45d7f84e2e
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -35,6 +35,7 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - llvm-openmp                # [osx]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
   run:
@@ -50,7 +51,6 @@ about:
   home: http://ms.math.uni-mannheim.de/de/publications/software
   license: GPL-3.0-or-later
   summary: Various utilities are provided that might be used in spatial statistics and elsewhere. It delivers a method for solving linear equations that checks the sparsity of the matrix before any algorithm is used. Furthermore, it includes the Struve functions.
-  license_family: GPL3
   license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
